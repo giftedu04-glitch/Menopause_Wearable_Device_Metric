@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menopause Digital Twin</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="dot"></span>
+      <h1>Menopause Digital Twin</h1>
+    </div>
+    <p class="subtitle">At-home wearable sensing &rarr; per-person digital twin &rarr; probabilistic, explainable state</p>
+    <div class="disclaimer" role="alert">
+      <strong>Not a medical device.</strong> Outputs are probabilistic estimates &mdash;
+      <em>not a diagnosis, not a certainty.</em> Always consult a qualified clinician.
+    </div>
+  </header>
+
+  <main>
+    <section class="controls card">
+      <label>Person ID <input id="pid" value="demo-person-001" /></label>
+      <label>Age <input id="age" type="number" value="49" min="30" max="70" /></label>
+      <label>Duration (s) <input id="duration" type="number" value="600" step="60" min="120" /></label>
+      <button id="run">Run digital twin</button>
+      <span id="status" class="status"></span>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Most likely stage</h2>
+        <div id="stage" class="big">&mdash;</div>
+        <div id="confidence" class="muted"></div>
+        <div id="posterior" class="bars"></div>
+      </div>
+
+      <div class="card">
+        <h2>Menopause-attributable index</h2>
+        <div id="mindex" class="big">&mdash;</div>
+        <div class="muted">z beyond age-matched asymptomatic trajectory</div>
+        <canvas id="timeline" height="90"></canvas>
+      </div>
+
+      <div class="card">
+        <h2>Live sensor field</h2>
+        <div class="muted">Spatially distributed body sites</div>
+        <ul id="field" class="field"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Vasomotor events</h2>
+        <ul id="events" class="events"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Interactive ML &mdash; correct the twin</h2>
+      <p class="muted">Your correction updates the model in the loop and returns a calibrated interval. Uncertainty is never hidden.</p>
+      <div class="controls">
+        <label>Variable
+          <select id="var">
+            <option>stress</option>
+            <option>fatigue</option>
+            <option>mood</option>
+            <option>vasomotor_index</option>
+          </select>
+        </label>
+        <label>Predicted <input id="pred" type="number" value="0.5" step="0.05" /></label>
+        <label>Your value <input id="obs" type="number" value="0.3" step="0.05" /></label>
+        <button id="correct">Submit correction</button>
+      </div>
+      <pre id="corrOut" class="out"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <span>Research reference &bull; MIT License &bull; estimates only, never a certainty.</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

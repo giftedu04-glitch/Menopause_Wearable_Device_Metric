@@ -1,0 +1,45 @@
+# Spatially distributed wearable sensor node configuration
+# The body is treated as a SENSOR FIELD, not a single point device.
+# Sampling rates are research defaults; see docs/sensors.md.
+
+sampling:
+  temperature_hz: 4        # skin temperature array
+  eda_hz: 8                # electrodermal activity
+  ppg_hz: 64               # optical pulse / HRV
+  imu_hz: 32               # movement, sleep position
+  eeg_hz: 128              # dry-EEG headband (sleep staging)
+
+nodes:
+  - id: wrist_l
+    body_site: left_wrist
+    sensors: [ppg, eda, imu, temperature]
+  - id: wrist_r
+    body_site: right_wrist
+    sensors: [temperature, imu]
+  - id: sternum
+    body_site: sternum
+    sensors: [temperature, ppg, humidity]
+  - id: axilla
+    body_site: left_axilla
+    sensors: [temperature, humidity]
+  - id: neck
+    body_site: neck
+    sensors: [temperature]
+  - id: headband
+    body_site: forehead
+    sensors: [eeg, eog, temperature]
+
+spatial_gradients:
+  # Ordered propagation path used to characterize vasomotor (hot flush) waves.
+  vasomotor_path: [sternum, neck, axilla, forehead, right_wrist, left_wrist]
+
+drift:
+  # Slow baseline drift removal per sensor (rolling window in seconds).
+  temperature_window_s: 1800
+  eda_window_s: 600
+  ppg_window_s: 300
+
+fusion:
+  window_s: 60             # analysis window
+  stride_s: 10             # hop between windows
+  min_sites_for_gradient: 3

@@ -1,0 +1,64 @@
+{
+  "name": "FDA menopause diagnostic reference (ingested prior)",
+  "version": "0.1.0",
+  "note": "Research reference used as a PRIOR only. It does NOT produce a diagnosis and MUST NOT be treated as a certainty. Values are illustrative summaries of publicly documented staging concepts (STRAW+10) and FDA-style reproductive hormone diagnostic reference ranges. Verify against primary sources before any clinical interpretation.",
+  "staging_model": "STRAW+10",
+  "stages": [
+    {
+      "id": "late_reproductive",
+      "label": "Late reproductive",
+      "typical_age_range": [35, 45],
+      "prior_weight_by_age_peak": 40,
+      "description": "Regular cycles, subtle decline in fecundity."
+    },
+    {
+      "id": "early_perimenopause",
+      "label": "Early perimenopause",
+      "typical_age_range": [42, 48],
+      "prior_weight_by_age_peak": 46,
+      "description": "Variable cycle length; early vasomotor symptoms may begin."
+    },
+    {
+      "id": "late_perimenopause",
+      "label": "Late perimenopause",
+      "typical_age_range": [47, 52],
+      "prior_weight_by_age_peak": 49,
+      "description": "Amenorrhea intervals >= 60 days; vasomotor symptoms more prominent."
+    },
+    {
+      "id": "early_postmenopause",
+      "label": "Early postmenopause",
+      "typical_age_range": [50, 56],
+      "prior_weight_by_age_peak": 52,
+      "description": "12 months amenorrhea; FSH elevated, estradiol low; symptoms variable."
+    },
+    {
+      "id": "late_postmenopause",
+      "label": "Late postmenopause",
+      "typical_age_range": [55, 70],
+      "prior_weight_by_age_peak": 60,
+      "description": "Further stabilization; vasomotor symptoms generally wane."
+    }
+  ],
+  "hormone_reference": {
+    "note": "Illustrative ranges only. Units and cut-offs vary by assay/lab.",
+    "FSH_IU_L": {
+      "reproductive": [3, 12],
+      "perimenopause": [10, 40],
+      "postmenopause": [25, 100]
+    },
+    "estradiol_pg_mL": {
+      "reproductive": [20, 350],
+      "perimenopause": [10, 200],
+      "postmenopause": [0, 30]
+    }
+  },
+  "symptom_domains": [
+    "vasomotor",
+    "sleep",
+    "mood",
+    "cognitive",
+    "genitourinary",
+    "musculoskeletal"
+  ]
+}
