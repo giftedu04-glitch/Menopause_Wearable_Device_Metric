@@ -142,21 +142,13 @@ These are computed **on-device / on-phone** to preserve privacy, and exposed to 
 The device is **part of a whole digital-twin assembly** — it is *not* a standalone gadget.
 The digital twin is a continuously updated computational model of **one unique person**:
 
-```
-            ┌─────────────────────────────────────────────────────────┐
-            │                    DIGITAL TWIN                          │
-            │                                                          │
-  Wearable ─┤  physiological state  ──┐                              │
-  (this repo)│                        ├──► fused latent state ──►    │
-            │  psychological state  ──┘        │                     │
-            │                                  ▼                     │
-  Phone app ─┤  behavioral telemetry ─► interactive ML ─► twin update │
-  (this repo)│                                  │                     │
-            │                                  ▼                     │
-  FDA prior ─┤  ingested diagnostic     ─► probabilistic, explainable │
-            │  reference (knowledge)        outputs (NOT certainty)   │
-            └─────────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="docs/images/digital_twin_assembly.png"
+       alt="Digital twin assembly — wearable, phone app, and FDA prior feeding the twin"
+       width="720">
+  <br>
+  <em>Figure 2. The digital twin assembly: the wearable, the phone-carried app, and the ingested FDA prior flow into one per-person twin.</em>
+</p>
 
 **The phone carries the twin.** In the same way a person moves through the world with a
 phone whose apps hold a *compiled recursion* of what that person loves to watch on YouTube
@@ -228,15 +220,13 @@ component learned from age-matched reference trajectories — yielding a per-wom
 
 ## Architecture
 
-```
- sensors/ ──► signal/ ──► digital_twin/ ──► api/ ──► webapp/
-   raw        fusion       per-person        REST     UI
- stream      features      state model       + WS
-                                   ▲
-                  models/          │
-                  ├─ fda_knowledge │ (prior)
-                  └─ aging_menopause (disentangle)
-```
+<p align="center">
+  <img src="docs/images/architecture.png"
+       alt="System architecture — sensors, signal fusion, digital twin, models, API and webapp"
+       width="720">
+  <br>
+  <em>Figure 3. System architecture: sensors → signal fusion → digital twin → models → API → webapp.</em>
+</p>
 
 Details: [`docs/architecture.md`](docs/architecture.md).
 
