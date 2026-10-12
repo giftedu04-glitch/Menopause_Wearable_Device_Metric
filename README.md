@@ -80,6 +80,14 @@ hormonal axis surrogates, thermoregulatory instability (hot flushes / night swea
 autonomic shifts, sleep architecture, and mood/affect proxies — and fuses them into a
 coherent, person-specific trajectory.
 
+<p align="center">
+  <img src="docs/images/menopausal_wearable_device.png"
+       alt="Menopause wearable device — spatially distributed sensor layout"
+       width="720">
+  <br>
+  <em>Figure 1. The menopause wearable: sensitive, spatially distributed sensors for capturing subtle physiological signals across the body.</em>
+</p>
+
 ### Sensing the subtle: sensor suite
 
 | Domain | Modality | What it captures | Candidate sensitive technology |
