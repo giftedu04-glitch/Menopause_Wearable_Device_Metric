@@ -38,7 +38,7 @@ transition in an individual woman.**
 
 Women experience a range of health issues across the lifespan that affect how they live
 their daily lives and impact the health and resilience of society as a whole. Diseases and
-conditions that exclusively impact women represent a significant burden; **hysterectomy**
+conditions that exclusively impact women represent a significant burden; **diabetes**,**Stroke**,
 and **breast cancer** are all too common, and the effects of **menopause** impose a costly
 health, financial, and career burden across families, workplaces, and communities. Other
 health challenges simply affect women differently or disproportionately, adding to the
